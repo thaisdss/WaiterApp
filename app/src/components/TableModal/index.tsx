@@ -15,14 +15,15 @@ export function TableModal({visible, onClose, onSave} : TableModalProps){
   const [table, setTable] = useState('');
 
   function handleSave(){
+    setTable('');
     onSave(table);
     onClose();
   }
 
   return(
-    <Modal 
-      transparent 
-      visible={visible} 
+    <Modal
+      transparent
+      visible={visible}
       animationType="fade"
     >
       <Overlay behavior={Platform.OS === 'android' ? 'height' : 'padding'}>
