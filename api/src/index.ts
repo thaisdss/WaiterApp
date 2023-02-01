@@ -9,7 +9,7 @@ const app = express();
 const server = http.createServer(app);
 export const io = new Server(server);
 
-mongoose.connect('mongodb+srv://thaisdss:Jesuslindoo@cluster0.lpnthdq.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect(`mongodb+srv://${process.env.REACT_APP_MONGODB_USER}:${process.env.REACT_APP_MONGODB_PASSWORD}@cluster0.lpnthdq.mongodb.net/?retryWrites=true&w=majority`)
   .then(() => {
     app.use((req, res, next) => {
       res.setHeader('Access-Control-Allow-Origin', '*');
